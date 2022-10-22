@@ -1,9 +1,11 @@
-import { Command } from '../commands/command';
-import { GuildMember } from 'discord.js';
+import { Command } from "../commands/command";
+import { GuildMember } from "discord.js";
 
 export default class Validators {
-    checkPreconditions(command: Command, executor: GuildMember) {
-        if (command.precondition && !executor.hasPermission(command.precondition))
-            throw new TypeError(`**Required Permission**: \`${command.precondition}\``);
-    }
+  checkPreconditions(command: Command, executor: GuildMember) {
+    if (command.precondition && !executor.hasPermission(command.precondition))
+      throw new TypeError(
+        `**Required Permission**: \`${command.precondition}\``
+      );
+  }
 }
